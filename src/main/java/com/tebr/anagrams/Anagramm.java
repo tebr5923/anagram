@@ -15,9 +15,19 @@ public class Anagramm {
     }
 
     public String reverse() {
-        String result;
-        result=reversOne(anagramm);
-        return result;
+        List<String> anagrams = splitAnagramm();
+        StringBuilder result = new StringBuilder();
+
+        int count = 0;
+        for (String splitAnagramm : anagrams) {
+            if (count != 0) {
+                result.append(' ');
+            }
+            result.append(reversOne(splitAnagramm));
+            count++;
+        }
+
+        return result.toString();
     }
 
     public String getAnagramm() {
@@ -37,8 +47,11 @@ public class Anagramm {
     }
 
     private String reversOne(String splitAnagramm) {
-        StringBuilder result= new StringBuilder(splitAnagramm);
+        StringBuilder result = new StringBuilder(splitAnagramm);
+        StringBuilder sb=new StringBuilder();
+
         result.reverse();
+
         return result.toString();
     }
 }
