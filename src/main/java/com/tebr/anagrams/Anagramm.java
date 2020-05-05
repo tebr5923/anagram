@@ -1,8 +1,6 @@
 package com.tebr.anagrams;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Anagramm {
     private String anagramm;
@@ -46,12 +44,36 @@ public class Anagramm {
         return anagrams;
     }
 
+
     private String reversOne(String splitAnagramm) {
-        StringBuilder result = new StringBuilder(splitAnagramm);
-        StringBuilder sb=new StringBuilder();
+        StringBuilder sbLetters = new StringBuilder();
+        int length = splitAnagramm.length();
+        char[] charNotLetters = new char[length];
+        int count = 0;
 
-        result.reverse();
+        for (char ch : splitAnagramm.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                sbLetters.append(ch);
+                charNotLetters[count] = ' ';
+            } else {
+                charNotLetters[count] = ch;
+            }
+            count++;
+        }
+        sbLetters.reverse();
 
-        return result.toString();
+        List<Character> listLetters = new ArrayList<Character>();
+        for (char ch : sbLetters.toString().toCharArray()) {
+            listLetters.add(ch);
+        }
+
+        Iterator<Character> iterator = listLetters.iterator();
+
+        for (int i = 0; i < length; i++) {
+            if (charNotLetters[i] == ' ') {
+                charNotLetters[i] = iterator.next();
+            }
+        }
+        return new String(charNotLetters);
     }
 }
