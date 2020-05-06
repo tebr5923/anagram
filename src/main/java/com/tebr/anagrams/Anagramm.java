@@ -14,8 +14,7 @@ public class Anagramm {
     }
 
     public String reversed() {
-        String miss = " ";
-        StringJoiner stringJoiner = new StringJoiner(miss);
+        StringJoiner stringJoiner = new StringJoiner(DELIMITER);
         for (String word : anagramm.split(DELIMITER)) {
             stringJoiner.add(reverseWord(word));
         }
