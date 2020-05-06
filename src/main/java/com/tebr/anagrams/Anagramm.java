@@ -12,19 +12,19 @@ public class Anagramm {
     public String reversed() {
         String[] anagrams = anagramm.split(" ");
         StringJoiner stringJoiner = new StringJoiner(" ");
-        for (String splitAnagramm : anagrams) {
-            stringJoiner.add(reversOne(splitAnagramm));
+        for (String shortAnagramm : anagrams) {
+            stringJoiner.add(doReverse(shortAnagramm));
         }
         return stringJoiner.toString();
     }
 
-    private String reversOne(String splitAnagramm) {
+    private String doReverse(String shortAnagramm) {
         StringBuilder sbLetters = new StringBuilder();
-        int length = splitAnagramm.length();
+        int length = shortAnagramm.length();
         char[] charNotLetters = new char[length];
         int count = 0;
 
-        for (char ch : splitAnagramm.toCharArray()) {
+        for (char ch : shortAnagramm.toCharArray()) {
             if (Character.isLetter(ch)) {
                 sbLetters.append(ch);
                 charNotLetters[count] = ' ';
