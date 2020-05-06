@@ -13,18 +13,12 @@ public class Anagramm {
     }
 
     public String reverse() {
-        StringBuilder result = new StringBuilder();
-
         String[] anagrams = anagramm.split(" ");
-        int count = 0;
+        StringJoiner stringJoiner = new StringJoiner(" ");
         for (String splitAnagramm : anagrams) {
-            if (count != 0) {
-                result.append(' ');
-            }
-            result.append(reversOne(splitAnagramm));
-            count++;
+            stringJoiner.add(reversOne(splitAnagramm));
         }
-        return result.toString();
+        return stringJoiner.toString();
     }
 
     public String getAnagramm() {
@@ -52,7 +46,7 @@ public class Anagramm {
         }
         sbLetters.reverse();
 
-        List<Character> listLetters = new ArrayList<Character>();
+        List<Character> listLetters = new ArrayList<>();
         for (char ch : sbLetters.toString().toCharArray()) {
             listLetters.add(ch);
         }
