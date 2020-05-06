@@ -13,9 +13,8 @@ public class Anagramm {
     }
 
     public String reversed() {
-        String[] anagrams = anagramm.split(" ");
         StringJoiner stringJoiner = new StringJoiner(" ");
-        for (String shortAnagramm : anagrams) {
+        for (String shortAnagramm : anagramm.split(" ")) {
             stringJoiner.add(doReverse(shortAnagramm));
         }
         return stringJoiner.toString();
