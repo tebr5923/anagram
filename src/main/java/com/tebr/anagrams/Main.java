@@ -7,6 +7,5 @@ public class Main {
 
         System.out.println(string);
         System.out.println(anagramm.reversed());
-
     }
 }

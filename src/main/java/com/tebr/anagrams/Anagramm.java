@@ -1,6 +1,9 @@
 package com.tebr.anagrams;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.StringJoiner;
 
 public class Anagramm {
     private final String anagramm;
@@ -22,8 +25,8 @@ public class Anagramm {
         StringBuilder letters = new StringBuilder();
         int length = shortAnagramm.length();
         char[] notLetters = new char[length];
-        int count = 0;
 
+        int count = 0;
         for (char ch : shortAnagramm.toCharArray()) {
             if (Character.isLetter(ch)) {
                 letters.append(ch);
