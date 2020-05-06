@@ -7,14 +7,16 @@ import java.util.StringJoiner;
 
 public class Anagramm {
     private final String anagramm;
+    private static final String DELIMITER = " ";
 
     public Anagramm(String anagramm) {
         this.anagramm = anagramm;
     }
 
     public String reversed() {
-        StringJoiner stringJoiner = new StringJoiner(" ");
-        for (String shortAnagramm : anagramm.split(" ")) {
+        String miss = " ";
+        StringJoiner stringJoiner = new StringJoiner(miss);
+        for (String shortAnagramm : anagramm.split(DELIMITER)) {
             stringJoiner.add(doReverse(shortAnagramm));
         }
         return stringJoiner.toString();
