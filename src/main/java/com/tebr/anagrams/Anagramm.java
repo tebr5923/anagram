@@ -3,10 +3,7 @@ package com.tebr.anagrams;
 import java.util.*;
 
 public class Anagramm {
-    private String anagramm;
-
-    public Anagramm() {
-    }
+    private final String anagramm;
 
     public Anagramm(String anagramm) {
         this.anagramm = anagramm;
@@ -19,14 +16,6 @@ public class Anagramm {
             stringJoiner.add(reversOne(splitAnagramm));
         }
         return stringJoiner.toString();
-    }
-
-    public String getAnagramm() {
-        return anagramm;
-    }
-
-    public void setAnagramm(String anagramm) {
-        this.anagramm = anagramm;
     }
 
     private String reversOne(String splitAnagramm) {
