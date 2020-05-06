@@ -17,12 +17,12 @@ public class Anagramm {
         String miss = " ";
         StringJoiner stringJoiner = new StringJoiner(miss);
         for (String word : anagramm.split(DELIMITER)) {
-            stringJoiner.add(doReverse(word));
+            stringJoiner.add(reverseWord(word));
         }
         return stringJoiner.toString();
     }
 
-    private String doReverse(String word) {
+    private String reverseWord(String word) {
         StringBuilder letters = new StringBuilder();
         int length = word.length();
         char[] notLetters = new char[length];
