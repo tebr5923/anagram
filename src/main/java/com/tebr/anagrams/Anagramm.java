@@ -19,34 +19,34 @@ public class Anagramm {
     }
 
     private String doReverse(String shortAnagramm) {
-        StringBuilder sbLetters = new StringBuilder();
+        StringBuilder letters = new StringBuilder();
         int length = shortAnagramm.length();
-        char[] charNotLetters = new char[length];
+        char[] notLetters = new char[length];
         int count = 0;
 
         for (char ch : shortAnagramm.toCharArray()) {
             if (Character.isLetter(ch)) {
-                sbLetters.append(ch);
-                charNotLetters[count] = ' ';
+                letters.append(ch);
+                notLetters[count] = ' ';
             } else {
-                charNotLetters[count] = ch;
+                notLetters[count] = ch;
             }
             count++;
         }
-        sbLetters.reverse();
+        letters.reverse();
 
         List<Character> listLetters = new ArrayList<>();
-        for (char ch : sbLetters.toString().toCharArray()) {
+        for (char ch : letters.toString().toCharArray()) {
             listLetters.add(ch);
         }
 
         Iterator<Character> iterator = listLetters.iterator();
-
         for (int i = 0; i < length; i++) {
-            if (charNotLetters[i] == ' ') {
-                charNotLetters[i] = iterator.next();
+            if (notLetters[i] == ' ') {
+                notLetters[i] = iterator.next();
             }
         }
-        return new String(charNotLetters);
+        return new String(notLetters);
     }
+
 }
