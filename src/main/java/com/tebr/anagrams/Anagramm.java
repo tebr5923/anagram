@@ -1,6 +1,9 @@
 package com.tebr.anagrams;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.StringJoiner;
 
 public class Anagramm {
     private final String anagramm;
@@ -27,14 +30,14 @@ public class Anagramm {
             listLetters.add(ch);
         }
 
-        char[] notLetters = word.toCharArray();
+        char[] chars = word.toCharArray();
         Iterator<Character> iterator = listLetters.iterator();
         for (int i = 0; i < length; i++) {
-            if (Character.isLetter(notLetters[i])) {
-                notLetters[i] = iterator.next();
+            if (Character.isLetter(chars[i])) {
+                chars[i] = iterator.next();
             }
         }
-        return new String(notLetters);
+        return new String(chars);
     }
 
     private char[] reverseLetters(String word) {
