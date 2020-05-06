@@ -16,19 +16,19 @@ public class Anagramm {
     public String reversed() {
         String miss = " ";
         StringJoiner stringJoiner = new StringJoiner(miss);
-        for (String shortAnagramm : anagramm.split(DELIMITER)) {
-            stringJoiner.add(doReverse(shortAnagramm));
+        for (String word : anagramm.split(DELIMITER)) {
+            stringJoiner.add(doReverse(word));
         }
         return stringJoiner.toString();
     }
 
-    private String doReverse(String shortAnagramm) {
+    private String doReverse(String word) {
         StringBuilder letters = new StringBuilder();
-        int length = shortAnagramm.length();
+        int length = word.length();
         char[] notLetters = new char[length];
 
         int count = 0;
-        for (char ch : shortAnagramm.toCharArray()) {
+        for (char ch : word.toCharArray()) {
             if (Character.isLetter(ch)) {
                 letters.append(ch);
                 notLetters[count] = ' ';
