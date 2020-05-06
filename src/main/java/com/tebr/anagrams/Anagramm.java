@@ -22,34 +22,32 @@ public class Anagramm {
     }
 
     private String reverseWord(String word) {
-        StringBuilder letters = new StringBuilder();
         int length = word.length();
-        char[] notLetters = new char[length];
-
-        int count = 0;
-        for (char ch : word.toCharArray()) {
-            if (Character.isLetter(ch)) {
-                letters.append(ch);
-                notLetters[count] = ' ';
-            } else {
-                notLetters[count] = ch;
-            }
-            count++;
-        }
-        letters.reverse();
-
+        char[] letters = reverseLetters(word);
         List<Character> listLetters = new ArrayList<>();
-        for (char ch : letters.toString().toCharArray()) {
+
+        for (char ch : letters) {
             listLetters.add(ch);
         }
 
+        char[] notLetters = word.toCharArray();
         Iterator<Character> iterator = listLetters.iterator();
         for (int i = 0; i < length; i++) {
-            if (notLetters[i] == ' ') {
+            if (Character.isLetter(notLetters[i])) {
                 notLetters[i] = iterator.next();
             }
         }
         return new String(notLetters);
     }
 
+    private char[] reverseLetters(String word) {
+        StringBuilder letters = new StringBuilder();
+        for (char ch : word.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                letters.append(ch);
+            }
+        }
+        letters.reverse();
+        return letters.toString().toCharArray();
+    }
 }
