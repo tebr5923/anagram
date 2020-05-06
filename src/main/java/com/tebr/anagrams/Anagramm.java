@@ -13,9 +13,9 @@ public class Anagramm {
     }
 
     public String reverse() {
-        List<String> anagrams = splitAnagramm();
         StringBuilder result = new StringBuilder();
 
+        String[] anagrams = anagramm.split(" ");
         int count = 0;
         for (String splitAnagramm : anagrams) {
             if (count != 0) {
@@ -24,7 +24,6 @@ public class Anagramm {
             result.append(reversOne(splitAnagramm));
             count++;
         }
-
         return result.toString();
     }
 
@@ -35,15 +34,6 @@ public class Anagramm {
     public void setAnagramm(String anagramm) {
         this.anagramm = anagramm;
     }
-
-    private List<String> splitAnagramm() {
-        List<String> anagrams = new ArrayList<String>();
-
-        Collections.addAll(anagrams, anagramm.split(" "));
-
-        return anagrams;
-    }
-
 
     private String reversOne(String splitAnagramm) {
         StringBuilder sbLetters = new StringBuilder();
