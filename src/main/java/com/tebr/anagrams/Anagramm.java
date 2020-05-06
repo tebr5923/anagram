@@ -1,9 +1,6 @@
 package com.tebr.anagrams;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class Anagramm {
     private final String anagramm;
@@ -49,5 +46,6 @@ public class Anagramm {
         }
         letters.reverse();
         return letters.toString().toCharArray();
+     //   return Arrays.asList(letters);
     }
 }
