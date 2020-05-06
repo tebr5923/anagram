@@ -9,7 +9,7 @@ public class Anagramm {
         this.anagramm = anagramm;
     }
 
-    public String reverse() {
+    public String reversed() {
         String[] anagrams = anagramm.split(" ");
         StringJoiner stringJoiner = new StringJoiner(" ");
         for (String splitAnagramm : anagrams) {

@@ -6,7 +6,7 @@ public class Main {
         Anagramm anagramm = new Anagramm(string);
 
         System.out.println(string);
-        System.out.println(anagramm.reverse());
+        System.out.println(anagramm.reversed());
 
     }
 }
