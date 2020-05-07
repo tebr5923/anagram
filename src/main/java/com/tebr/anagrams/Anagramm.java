@@ -12,10 +12,10 @@ public class Anagramm implements ReversibleString {
 
     @Override
     public String reverse() {
-            StringJoiner stringJoiner = new StringJoiner(DELIMITER);
-            for (String word : inputText.split(DELIMITER)) {
-                stringJoiner.add(reverseWord(word));
-            }
+        StringJoiner stringJoiner = new StringJoiner(DELIMITER);
+        for (String word : inputText.split(DELIMITER)) {
+            stringJoiner.add(reverseWord(word));
+        }
         return stringJoiner.toString();
     }
 
