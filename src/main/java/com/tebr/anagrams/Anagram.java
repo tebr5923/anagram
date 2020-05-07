@@ -2,17 +2,19 @@ package com.tebr.anagrams;
 
 import java.util.*;
 
-public class Anagramm {
-    private final String anagramm;
+public class Anagram implements ReversibleString {
     private static final String DELIMITER = " ";
+    private final String inputText;
 
-    public Anagramm(String anagramm) {
-        this.anagramm = anagramm;
+
+    public Anagram(String text) {
+        this.inputText = text;
     }
 
-    public String reversed() {
+    @Override
+    public String reverse() {
         StringJoiner stringJoiner = new StringJoiner(DELIMITER);
-        for (String word : anagramm.split(DELIMITER)) {
+        for (String word : inputText.split(DELIMITER)) {
             stringJoiner.add(reverseWord(word));
         }
         return stringJoiner.toString();
