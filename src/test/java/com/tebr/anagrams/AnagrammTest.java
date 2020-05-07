@@ -13,4 +13,14 @@ class AnagrammTest {
 
         assertEquals(expResult, result);
     }
+
+    @org.junit.jupiter.api.Test
+    void reversed_ReverseEmptyText_ReturnEmptyText() {
+        Anagramm anagramm = new Anagramm("");
+        String expResult = "";
+
+        String result = anagramm.reversed();
+
+        assertEquals(expResult, result);
+    }
 }
