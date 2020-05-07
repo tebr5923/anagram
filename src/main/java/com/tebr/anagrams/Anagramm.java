@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Anagramm implements Reversible {
     private final String inputText;
-    private String anagramm;
     private static final String DELIMITER = " ";
 
     public Anagramm(String text) {
@@ -13,14 +12,11 @@ public class Anagramm implements Reversible {
 
     @Override
     public String reversed() {
-        if (anagramm == null) {
             StringJoiner stringJoiner = new StringJoiner(DELIMITER);
             for (String word : inputText.split(DELIMITER)) {
                 stringJoiner.add(reverseWord(word));
             }
-            anagramm = stringJoiner.toString();
-        }
-        return anagramm;
+        return stringJoiner.toString();
     }
 
     private String reverseWord(String word) {
