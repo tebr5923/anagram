@@ -1,10 +1,10 @@
 package com.tebr.anagrams;
 
-public class CachedAnagramm implements Reversible{
-    private final Anagramm anagramm;
+public class CachedReversible implements Reversible{
+    private final Reversible anagramm;
     private String result;
 
-    public CachedAnagramm(Anagramm anagramm) {
+    public CachedReversible(Reversible anagramm) {
         this.anagramm = anagramm;
     }
 
