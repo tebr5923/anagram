@@ -3,8 +3,9 @@ package com.tebr.anagrams;
 import java.util.*;
 
 public class Anagramm implements ReversibleString {
-    private final String inputText;
     private static final String DELIMITER = " ";
+    private final String inputText;
+
 
     public Anagramm(String text) {
         this.inputText = text;
