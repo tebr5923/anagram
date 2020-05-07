@@ -1,10 +1,10 @@
 package com.tebr.anagrams;
 
-public class CashedAnagramm {
-    private String text;
+public class CachedAnagramm {
+    private final String text;
     private String anagramm;
 
-    public CashedAnagramm(String text) {
+    public CachedAnagramm(String text) {
         this.text = text;
     }
 
