@@ -1,17 +1,18 @@
 package com.tebr.anagrams;
 
-public class CachedAnagramm {
-    private final String text;
-    private String anagramm;
+public class CachedAnagramm implements Reversible{
+    private final Anagramm anagramm;
+    private String result;
 
-    public CachedAnagramm(String text) {
-        this.text = text;
+    public CachedAnagramm(Anagramm anagramm) {
+        this.anagramm = anagramm;
     }
 
-    public String getAnagramm() {
-        if (anagramm == null) {
-            anagramm = new Anagramm(text).reversed();
+    @Override
+    public String reversed() {
+        if (result == null) {
+            result = anagramm.reversed();
         }
-        return anagramm;
+        return result;
     }
 }
