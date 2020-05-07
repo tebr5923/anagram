@@ -9,9 +9,9 @@ public class CachedReversibleString implements ReversibleString {
     }
 
     @Override
-    public String reversed() {
+    public String reverse() {
         if (result == null) {
-            result = anagramm.reversed();
+            result = anagramm.reverse();
         }
         return result;
     }

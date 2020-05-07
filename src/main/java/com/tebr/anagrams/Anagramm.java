@@ -11,7 +11,7 @@ public class Anagramm implements ReversibleString {
     }
 
     @Override
-    public String reversed() {
+    public String reverse() {
             StringJoiner stringJoiner = new StringJoiner(DELIMITER);
             for (String word : inputText.split(DELIMITER)) {
                 stringJoiner.add(reverseWord(word));
