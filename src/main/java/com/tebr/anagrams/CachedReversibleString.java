@@ -2,7 +2,7 @@ package com.tebr.anagrams;
 
 public class CachedReversibleString implements ReversibleString {
     private final ReversibleString reversibleString;
-    private String anagram;
+    private String result;
 
     public CachedReversibleString(ReversibleString reversibleString) {
         this.reversibleString = reversibleString;
@@ -10,9 +10,9 @@ public class CachedReversibleString implements ReversibleString {
 
     @Override
     public String reverse() {
-        if (anagram == null) {
-            anagram = reversibleString.reverse();
+        if (result == null) {
+            result = reversibleString.reverse();
         }
-        return anagram;
+        return result;
     }
 }
