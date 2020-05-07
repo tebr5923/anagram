@@ -1,6 +1,6 @@
 package com.tebr.anagrams;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AnagrammTest {
     private final Anagramm anagramm = new Anagramm("a123b c4d5t6f7");
