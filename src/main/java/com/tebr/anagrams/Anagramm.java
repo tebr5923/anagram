@@ -2,7 +2,7 @@ package com.tebr.anagrams;
 
 import java.util.*;
 
-public class Anagramm implements Reversible {
+public class Anagramm implements ReversibleString {
     private final String inputText;
     private static final String DELIMITER = " ";
 

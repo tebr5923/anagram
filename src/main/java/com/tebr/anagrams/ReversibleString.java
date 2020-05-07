@@ -1,5 +1,5 @@
 package com.tebr.anagrams;
 
-public interface Reversible {
+public interface ReversibleString {
     String reversed();
 }
