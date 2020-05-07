@@ -2,7 +2,7 @@ package com.tebr.anagrams;
 
 import java.util.*;
 
-public class Anagramm {
+public class Anagramm implements Reversible{
     private final String anagramm;
     private static final String DELIMITER = " ";
 
@@ -10,6 +10,7 @@ public class Anagramm {
         this.anagramm = anagramm;
     }
 
+    @Override
     public String reversed() {
         StringJoiner stringJoiner = new StringJoiner(DELIMITER);
         for (String word : anagramm.split(DELIMITER)) {
