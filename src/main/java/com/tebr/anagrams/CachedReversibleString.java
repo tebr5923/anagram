@@ -1,17 +1,17 @@
 package com.tebr.anagrams;
 
 public class CachedReversibleString implements ReversibleString {
-    private final ReversibleString textForReverse;
+    private final ReversibleString reversibleString;
     private String anagram;
 
-    public CachedReversibleString(ReversibleString textForReverse) {
-        this.textForReverse = textForReverse;
+    public CachedReversibleString(ReversibleString reversibleString) {
+        this.reversibleString = reversibleString;
     }
 
     @Override
     public String reverse() {
         if (anagram == null) {
-            anagram = textForReverse.reverse();
+            anagram = reversibleString.reverse();
         }
         return anagram;
     }
