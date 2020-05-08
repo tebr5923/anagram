@@ -40,7 +40,6 @@ class LettersAnagrammTest {
             "a123b c4d5t6f7, b123a f4t5d6c7",
             "qwerty, ytrewq",
             "123 321, 123 321",
-            "'    ', '    '",
             "'asd ', 'dsa '",
     })
     void reversed_ReverseParamText_ReturnReversedText(
@@ -48,6 +47,16 @@ class LettersAnagrammTest {
             String expResult
     ) {
         LettersAnagram anagramm = new LettersAnagram(inputText);
+
+        String result = anagramm.reverse();
+
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    void reversed_ReverseOnlySpaceText_ReturnOnlySpaceText() {
+        LettersAnagram anagramm = new LettersAnagram("   ");
+        String expResult = "   ";
 
         String result = anagramm.reverse();
 
