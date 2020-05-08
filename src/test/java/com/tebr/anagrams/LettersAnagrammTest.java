@@ -73,5 +73,4 @@ class LettersAnagrammTest {
         assertEquals(expectedResult, result);
     }
 
-
 }

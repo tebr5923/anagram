@@ -16,7 +16,7 @@ public class LettersAnagram implements ReversibleString {
         for (String word : inputText.split(DELIMITER)) {
             stringJoiner.add(reverseWord(word));
         }
-        return stringJoiner.toString();
+        return stringJoiner.toString()+searchEndSpaces();
     }
 
     private String reverseWord(String word) {
@@ -39,5 +39,16 @@ public class LettersAnagram implements ReversibleString {
         }
 
         return letters;
+    }
+
+    private String searchEndSpaces() {
+        StringBuilder spaces = new StringBuilder();
+
+        int count = inputText.length() - 1;
+        while ((count != -1) && (inputText.charAt(count) == ' ')) {
+            spaces.append(' ');
+            count--;
+        }
+        return spaces.toString();
     }
 }
