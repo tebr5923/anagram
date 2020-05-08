@@ -38,7 +38,6 @@ class LettersAnagrammTest {
     @ParameterizedTest
     @CsvSource({
             "a123b c4d5t6f7, b123a f4t5d6c7",
-            "'', ''",
             "qwerty, ytrewq",
             "123 321, 123 321",
             "'    ', '    '",
