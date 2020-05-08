@@ -2,12 +2,11 @@ package com.tebr.anagrams;
 
 import java.util.*;
 
-public class Anagram implements ReversibleString {
+public class LettersAnagram implements ReversibleString {
     private static final String DELIMITER = " ";
     private final String inputText;
 
-
-    public Anagram(String text) {
+    public LettersAnagram(String text) {
         this.inputText = text;
     }
 
