@@ -12,11 +12,11 @@ class LettersAnagrammTest {
     @Test
     void reversed_ReverseEmptyText_ReturnEmptyText() {
         anagram = new LettersAnagram("");
-        String expResult = "";
+        String expectedResult = "";
 
         String result = anagram.reverse();
 
-        assertEquals(expResult, result);
+        assertEquals(expectedResult, result);
     }
 
     @Test
@@ -34,43 +34,43 @@ class LettersAnagrammTest {
     })
     void reversed_ReverseParamText_ReturnReversedText(
             String inputText,
-            String expResult
+            String expectedResult
     ) {
         anagram = new LettersAnagram(inputText);
 
         String result = anagram.reverse();
 
-        assertEquals(expResult, result);
+        assertEquals(expectedResult, result);
     }
 
     @Test
     void reversed_ReverseBeginFromSpaceText_ReturnReverseBeginFromSpaceText() {
         anagram = new LettersAnagram(" asd");
-        String expResult = " dsa";
+        String expectedResult = " dsa";
 
         String result = anagram.reverse();
 
-        assertEquals(expResult, result);
+        assertEquals(expectedResult, result);
     }
 
     @Test
     void reversed_ReverseOnlySpacesText_ReturnOnlySpacesText() {
         anagram = new LettersAnagram("   ");
-        String expResult = "   ";
+        String expectedResult = "   ";
 
         String result = anagram.reverse();
 
-        assertEquals(expResult, result);
+        assertEquals(expectedResult, result);
     }
 
     @Test
     void reversed_ReverseSpaceInTheEndText_ReturnReverseTextWithSpaceInTheEnd() {
         anagram = new LettersAnagram("asd ");
-        String expResult = "dsa ";
+        String expectedResult = "dsa ";
 
         String result = anagram.reverse();
 
-        assertEquals(expResult, result);
+        assertEquals(expectedResult, result);
     }
 
 
