@@ -9,16 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class LettersAnagrammTest {
 
     @Test
-    void reversed_ReverseTheText_ReturnReversedText() {
-        LettersAnagram anagramm = new LettersAnagram("a123b c4d5t6f7");
-        String expResult = "b123a f4t5d6c7";
-
-        String result = anagramm.reverse();
-
-        assertEquals(expResult, result);
-    }
-
-    @Test
     void reversed_ReverseEmptyText_ReturnEmptyText() {
         LettersAnagram anagramm = new LettersAnagram("");
         String expResult = "";
