@@ -54,7 +54,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_ReverseOnlySpaceText_ReturnOnlySpaceText() {
+    void reversed_ReverseOnlySpacesText_ReturnOnlySpacesText() {
         LettersAnagram anagramm = new LettersAnagram("   ");
         String expResult = "   ";
 
