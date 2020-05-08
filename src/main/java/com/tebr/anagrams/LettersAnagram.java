@@ -14,7 +14,7 @@ public class LettersAnagram implements ReversibleString {
     @Override
     public String reverse() {
         if (inputText == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("text was not entered");
         }
         StringJoiner stringJoiner = new StringJoiner(DELIMITER);
         for (String word : inputText.split(DELIMITER, -1)) {
