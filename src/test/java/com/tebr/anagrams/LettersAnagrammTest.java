@@ -43,7 +43,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_ReverseBeginFromSpaceText_ReturnReverseBeginFromSpaceText() {
+    void reversed_IfInputTextWithLeading_ReturnTextWithLeading() {
         LettersAnagram anagram = new LettersAnagram(" asd");
         String expectedResult = " dsa";
 
@@ -63,7 +63,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_ReverseSpaceInTheEndText_ReturnReverseTextWithSpaceInTheEnd() {
+    void reversed_IfInputTextWithTrailing_ReturnTextWithTrailing() {
         LettersAnagram anagram = new LettersAnagram("asd ");
         String expectedResult = "dsa ";
 
