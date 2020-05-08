@@ -64,12 +64,21 @@ class LettersAnagrammTest {
 
     @Test
     void reversed_IfInputTextWithTrailing_ReturnTextWithTrailing() {
-        LettersAnagram anagram = new LettersAnagram("asd ");
-        String expectedResult = "dsa ";
+        LettersAnagram anagram = new LettersAnagram("asd  ");
+        String expectedResult = "dsa  ";
 
         String result = anagram.reverse();
 
         assertEquals(expectedResult, result);
     }
 
+    @Test
+    void reversed_InputTextWithSeveralSpacesInRow_ReturnTextWithSeveralSpacesInRow() {
+        LettersAnagram anagram = new LettersAnagram("asd   123q");
+        String expectedResult = "dsa   123q";
+
+        String result = anagram.reverse();
+
+        assertEquals(expectedResult, result);
+    }
 }
