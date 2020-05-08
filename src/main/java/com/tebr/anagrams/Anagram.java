@@ -6,7 +6,6 @@ public class Anagram implements ReversibleString {
     private static final String DELIMITER = " ";
     private final String inputText;
 
-
     public Anagram(String text) {
         this.inputText = text;
     }
