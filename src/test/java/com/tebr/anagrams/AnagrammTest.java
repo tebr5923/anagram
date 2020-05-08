@@ -1,6 +1,7 @@
 package com.tebr.anagrams;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AnagrammTest {
 
@@ -23,4 +24,13 @@ class AnagrammTest {
 
         assertEquals(expResult, result);
     }
+
+    @org.junit.jupiter.api.Test
+    void reversed_ReverseNull_ReturnNullPointerException() {
+        Anagram anagramm = new Anagram(null);
+
+        assertThrows(NullPointerException.class, anagramm::reverse);
+    }
+
+
 }
