@@ -39,14 +39,23 @@ class LettersAnagrammTest {
     @CsvSource({
             "a123b c4d5t6f7, b123a f4t5d6c7",
             "qwerty, ytrewq",
-            "123 321, 123 321",
-            "'asd ', 'dsa '",
+            "123 321, 123 321"
     })
     void reversed_ReverseParamText_ReturnReversedText(
             String inputText,
             String expResult
     ) {
         LettersAnagram anagramm = new LettersAnagram(inputText);
+
+        String result = anagramm.reverse();
+
+        assertEquals(expResult, result);
+    }
+
+    @Test
+    void reversed_ReverseBeginFromSpaceText_ReturnReverseBeginFromSpaceText() {
+        LettersAnagram anagramm = new LettersAnagram(" asd");
+        String expResult = " dsa";
 
         String result = anagramm.reverse();
 
@@ -62,5 +71,16 @@ class LettersAnagrammTest {
 
         assertEquals(expResult, result);
     }
+
+    @Test
+    void reversed_ReverseSpaceInTheEndText_ReturnReverseTextWithSpaceInTheEnd() {
+        LettersAnagram anagramm = new LettersAnagram("asd ");
+        String expResult = "dsa ";
+
+        String result = anagramm.reverse();
+
+        assertEquals(expResult, result);
+    }
+
 
 }
