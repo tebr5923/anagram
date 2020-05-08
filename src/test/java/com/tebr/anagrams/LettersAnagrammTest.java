@@ -7,11 +7,10 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LettersAnagrammTest {
-    private LettersAnagram anagram;
 
     @Test
     void reversed_ReverseEmptyText_ReturnEmptyText() {
-        anagram = new LettersAnagram("");
+        LettersAnagram anagram = new LettersAnagram("");
         String expectedResult = "";
 
         String result = anagram.reverse();
@@ -21,7 +20,7 @@ class LettersAnagrammTest {
 
     @Test
     void reversed_ReverseNull_ThrowsNullPointerException() {
-        anagram = new LettersAnagram(null);
+        LettersAnagram anagram = new LettersAnagram(null);
 
         assertThrows(NullPointerException.class, anagram::reverse);
     }
@@ -36,7 +35,7 @@ class LettersAnagrammTest {
             String inputText,
             String expectedResult
     ) {
-        anagram = new LettersAnagram(inputText);
+        LettersAnagram anagram = new LettersAnagram(inputText);
 
         String result = anagram.reverse();
 
@@ -45,7 +44,7 @@ class LettersAnagrammTest {
 
     @Test
     void reversed_ReverseBeginFromSpaceText_ReturnReverseBeginFromSpaceText() {
-        anagram = new LettersAnagram(" asd");
+        LettersAnagram anagram = new LettersAnagram(" asd");
         String expectedResult = " dsa";
 
         String result = anagram.reverse();
@@ -55,7 +54,7 @@ class LettersAnagrammTest {
 
     @Test
     void reversed_ReverseOnlySpacesText_ReturnOnlySpacesText() {
-        anagram = new LettersAnagram("   ");
+        LettersAnagram anagram = new LettersAnagram("   ");
         String expectedResult = "   ";
 
         String result = anagram.reverse();
@@ -65,7 +64,7 @@ class LettersAnagrammTest {
 
     @Test
     void reversed_ReverseSpaceInTheEndText_ReturnReverseTextWithSpaceInTheEnd() {
-        anagram = new LettersAnagram("asd ");
+        LettersAnagram anagram = new LettersAnagram("asd ");
         String expectedResult = "dsa ";
 
         String result = anagram.reverse();
