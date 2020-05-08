@@ -6,10 +6,10 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LettersAnagrammTest {
+class LettersAnagramTest {
 
     @Test
-    void reversed_ReverseEmptyText_ReturnEmptyText() {
+    void reverse_shouldReturnEmptyString_whenTextIsEmpty() {
         LettersAnagram anagram = new LettersAnagram("");
         String expectedResult = "";
 
@@ -19,7 +19,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_ReverseNull_ThrowsNullPointerException() {
+    void reverse_shouldThrowNullPointerException_whenArgumentIsNull() {
         LettersAnagram anagram = new LettersAnagram(null);
 
         assertThrows(NullPointerException.class, anagram::reverse);
@@ -31,7 +31,7 @@ class LettersAnagrammTest {
             "qwerty, ytrewq",
             "123 321, 123 321"
     })
-    void reversed_ReverseParamText_ReturnReversedText(
+    void reverse_shouldReturnReverseString_whenTextIsRandom(
             String inputText,
             String expectedResult
     ) {
@@ -43,7 +43,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_IfInputTextWithLeading_ReturnTextWithLeading() {
+    void reverse_shouldPreserveSpace_whenLeadingSpaceGiven() {
         LettersAnagram anagram = new LettersAnagram(" asd");
         String expectedResult = " dsa";
 
@@ -53,7 +53,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_ReverseOnlySpaces_ReturnOnlySpaces() {
+    void reverse_shouldPreserveSpaces_whenOnlySpacesGiven() {
         LettersAnagram anagram = new LettersAnagram("   ");
         String expectedResult = "   ";
 
@@ -63,7 +63,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_IfInputTextWithTrailing_ReturnTextWithTrailing() {
+    void reverse_shouldPreserveSpaces_whenTrailingSpacesGiven() {
         LettersAnagram anagram = new LettersAnagram("asd  ");
         String expectedResult = "dsa  ";
 
@@ -73,7 +73,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_InputTextWithSeveralSpacesInRow_ReturnTextWithSeveralSpacesInRow() {
+    void reverse_shouldPreserveSpaces_whenConsequentSpacesBetweenWordsGiven() {
         LettersAnagram anagram = new LettersAnagram("asd   123q");
         String expectedResult = "dsa   123q";
 
