@@ -7,22 +7,23 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LettersAnagrammTest {
+    private LettersAnagram anagram;
 
     @Test
     void reversed_ReverseEmptyText_ReturnEmptyText() {
-        LettersAnagram anagramm = new LettersAnagram("");
+        anagram = new LettersAnagram("");
         String expResult = "";
 
-        String result = anagramm.reverse();
+        String result = anagram.reverse();
 
         assertEquals(expResult, result);
     }
 
     @Test
     void reversed_ReverseNull_ThrowsNullPointerException() {
-        LettersAnagram anagramm = new LettersAnagram(null);
+        anagram = new LettersAnagram(null);
 
-        assertThrows(NullPointerException.class, anagramm::reverse);
+        assertThrows(NullPointerException.class, anagram::reverse);
     }
 
     @ParameterizedTest
@@ -35,39 +36,39 @@ class LettersAnagrammTest {
             String inputText,
             String expResult
     ) {
-        LettersAnagram anagramm = new LettersAnagram(inputText);
+        anagram = new LettersAnagram(inputText);
 
-        String result = anagramm.reverse();
+        String result = anagram.reverse();
 
         assertEquals(expResult, result);
     }
 
     @Test
     void reversed_ReverseBeginFromSpaceText_ReturnReverseBeginFromSpaceText() {
-        LettersAnagram anagramm = new LettersAnagram(" asd");
+        anagram = new LettersAnagram(" asd");
         String expResult = " dsa";
 
-        String result = anagramm.reverse();
+        String result = anagram.reverse();
 
         assertEquals(expResult, result);
     }
 
     @Test
     void reversed_ReverseOnlySpacesText_ReturnOnlySpacesText() {
-        LettersAnagram anagramm = new LettersAnagram("   ");
+        anagram = new LettersAnagram("   ");
         String expResult = "   ";
 
-        String result = anagramm.reverse();
+        String result = anagram.reverse();
 
         assertEquals(expResult, result);
     }
 
     @Test
     void reversed_ReverseSpaceInTheEndText_ReturnReverseTextWithSpaceInTheEnd() {
-        LettersAnagram anagramm = new LettersAnagram("asd ");
+        anagram = new LettersAnagram("asd ");
         String expResult = "dsa ";
 
-        String result = anagramm.reverse();
+        String result = anagram.reverse();
 
         assertEquals(expResult, result);
     }
