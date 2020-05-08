@@ -46,7 +46,7 @@ public class LettersAnagram implements ReversibleString {
         StringBuilder spaces = new StringBuilder();
 
         int count = inputText.length() - 1;
-        while ((count != -1) && (inputText.charAt(count) == ' ')) {
+        while ((count >=0) && (inputText.charAt(count) == ' ')) {
             spaces.append(' ');
             count--;
         }
