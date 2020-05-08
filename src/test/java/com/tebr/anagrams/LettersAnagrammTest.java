@@ -29,7 +29,7 @@ class LettersAnagrammTest {
     }
 
     @Test
-    void reversed_ReverseNull_ReturnNullPointerException() {
+    void reversed_ReverseNull_ThrowsNullPointerException() {
         LettersAnagram anagramm = new LettersAnagram(null);
 
         assertThrows(NullPointerException.class, anagramm::reverse);
