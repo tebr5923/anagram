@@ -14,10 +14,10 @@ public class LettersAnagram implements ReversibleString {
     @Override
     public String reverse() {
         StringJoiner stringJoiner = new StringJoiner(DELIMITER);
-        for (String word : inputText.split(DELIMITER)) {
+        for (String word : inputText.split(DELIMITER,-1)) {
             stringJoiner.add(reverseWord(word));
         }
-        return stringJoiner.toString()+searchEndSpaces();
+        return stringJoiner.toString();
     }
 
     private String reverseWord(String word) {
@@ -38,18 +38,6 @@ public class LettersAnagram implements ReversibleString {
                 letters.push(ch);
             }
         }
-
         return letters;
-    }
-
-    private String searchEndSpaces() {
-        StringBuilder spaces = new StringBuilder();
-
-        int count = inputText.length() - 1;
-        while ((count >=0) && (inputText.charAt(count) == ' ')) {
-            spaces.append(' ');
-            count--;
-        }
-        return spaces.toString();
     }
 }
