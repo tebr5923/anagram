@@ -1,15 +1,16 @@
 package com.tebr.anagrams;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AnagrammTest {
+class LettersAnagrammTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void reversed_ReverseTheText_ReturnReversedText() {
-        Anagram anagramm = new Anagram("a123b c4d5t6f7");
+        LettersAnagram anagramm = new LettersAnagram("a123b c4d5t6f7");
         String expResult = "b123a f4t5d6c7";
 
         String result = anagramm.reverse();
@@ -17,9 +18,9 @@ class AnagrammTest {
         assertEquals(expResult, result);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void reversed_ReverseEmptyText_ReturnEmptyText() {
-        Anagram anagramm = new Anagram("");
+        LettersAnagram anagramm = new LettersAnagram("");
         String expResult = "";
 
         String result = anagramm.reverse();
@@ -27,9 +28,9 @@ class AnagrammTest {
         assertEquals(expResult, result);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void reversed_ReverseNull_ReturnNullPointerException() {
-        Anagram anagramm = new Anagram(null);
+        LettersAnagram anagramm = new LettersAnagram(null);
 
         assertThrows(NullPointerException.class, anagramm::reverse);
     }
@@ -47,12 +48,11 @@ class AnagrammTest {
             String inputText,
             String expResult
     ) {
-        Anagram anagramm = new Anagram(inputText);
+        LettersAnagram anagramm = new LettersAnagram(inputText);
 
         String result = anagramm.reverse();
 
         assertEquals(expResult, result);
     }
-
 
 }
