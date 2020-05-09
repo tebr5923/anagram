@@ -3,7 +3,6 @@ package com.tebr.anagrams;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import sun.plugin.dom.exception.InvalidStateException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -21,10 +20,8 @@ class LettersAnagramTest {
     }
 
     @Test
-    void reverse_shouldThrowInvalidStateException_whenArgumentIsNull() {
-        LettersAnagram anagram = new LettersAnagram(null);
-
-        assertThrows(InvalidStateException.class, anagram::reverse);
+    void reverse_shouldThrowIllegalArgumentException_whenArgumentIsNull() {
+        assertThrows(IllegalArgumentException.class,  () -> new LettersAnagram(null));
     }
 
     @ParameterizedTest
