@@ -13,14 +13,15 @@ public class LettersAnagram implements ReversibleString {
 
     @Override
     public String reverse() {
-        if (inputText == null) {
+        if (inputText != null) {
+            StringJoiner stringJoiner = new StringJoiner(DELIMITER);
+            for (String word : inputText.split(DELIMITER, -1)) {
+                stringJoiner.add(reverseWord(word));
+            }
+            return stringJoiner.toString();
+        } else {
             throw new IllegalArgumentException("text was not entered");
         }
-        StringJoiner stringJoiner = new StringJoiner(DELIMITER);
-        for (String word : inputText.split(DELIMITER, -1)) {
-            stringJoiner.add(reverseWord(word));
-        }
-        return stringJoiner.toString();
     }
 
     private String reverseWord(String word) {
