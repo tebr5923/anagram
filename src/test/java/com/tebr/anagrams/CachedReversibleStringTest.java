@@ -14,10 +14,11 @@ class CachedReversibleStringTest {
     private LettersAnagram lettersAnagram;
 
     @Test
-    void reverse_shouldCallReverseOneTime_whenCallReverseTwoTimes() {
+    void reverse_shouldCallReverseOneTime_whenCallReverseOneMoreTimes() {
         CachedReversibleString cachedReversibleString =
                 new CachedReversibleString(lettersAnagram);
 
+        cachedReversibleString.reverse();
         cachedReversibleString.reverse();
         cachedReversibleString.reverse();
 
