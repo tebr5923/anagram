@@ -11,18 +11,18 @@ import static org.mockito.Mockito.verify;
 @ExtendWith(MockitoExtension.class)
 class CachedReversibleStringTest {
     @Mock
-    private LettersAnagram lettersAnagram;
+    private LettersAnagram mockLettersAnagram;
 
     @Test
     void reverse_shouldCallReverseOneTime_whenCallReverseOneMoreTimes() {
         CachedReversibleString cachedReversibleString =
-                new CachedReversibleString(lettersAnagram);
+                new CachedReversibleString(mockLettersAnagram);
 
         cachedReversibleString.reverse();
         cachedReversibleString.reverse();
         cachedReversibleString.reverse();
 
-        verify(lettersAnagram).reverse();
+        verify(mockLettersAnagram).reverse();
     }
 
     @Test
