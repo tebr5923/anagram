@@ -26,7 +26,7 @@ class CachedReversibleStringTest {
     }
 
     @Test
-    void reverse_shouldCallReverseOneTime_whenCallReverseOneMoreTimes() {
+    void reverse_shouldReturnCachedResult_whenCalledMultipleTimes() {
         cachedReversibleString.reverse();
         cachedReversibleString.reverse();
         cachedReversibleString.reverse();
