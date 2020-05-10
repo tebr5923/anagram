@@ -35,7 +35,7 @@ class CachedReversibleStringTest {
     }
 
     @Test
-    void reverse_LettersAnagramReverseAndCachedReversibleStringReverseIsEquals_ReturnTrue() {
+    void reverse_shouldNotAffectTheResultCachedReversibleString() {
         String expectedResult = mockLettersAnagram.reverse();
 
         String result = cachedReversibleString.reverse();
