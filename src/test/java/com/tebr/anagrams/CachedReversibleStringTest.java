@@ -18,7 +18,6 @@ class CachedReversibleStringTest {
     @Test
     void reverse_shouldCallReverseOneTime_whenCallReverseOneMoreTimes() {
         when(mockLettersAnagram.reverse()).thenReturn("123");
-
         CachedReversibleString cachedReversibleString =
                 new CachedReversibleString(mockLettersAnagram);
 
