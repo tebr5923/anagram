@@ -2,7 +2,7 @@ package com.tebr.anagrams;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,8 +10,9 @@ import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 class CachedReversibleStringTest {
-    @Mock
-    private LettersAnagram mockLettersAnagram;
+
+    @Spy
+    private final LettersAnagram mockLettersAnagram=new LettersAnagram("test");
 
     @Test
     void reverse_shouldCallReverseOneTime_whenCallReverseOneMoreTimes() {
