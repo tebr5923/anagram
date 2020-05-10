@@ -1,5 +1,6 @@
 package com.tebr.anagrams;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -13,15 +14,19 @@ import static org.mockito.Mockito.when;
 class CachedReversibleStringTest {
     private static final String RESULT = "123";
 
+    private CachedReversibleString cachedReversibleString;
+
     @Mock
     private LettersAnagram mockLettersAnagram;
 
+    @BeforeEach
+    public void setUp() {
+        when(mockLettersAnagram.reverse()).thenReturn(RESULT);
+        cachedReversibleString = new CachedReversibleString(mockLettersAnagram);
+    }
+
     @Test
     void reverse_shouldCallReverseOneTime_whenCallReverseOneMoreTimes() {
-        when(mockLettersAnagram.reverse()).thenReturn(RESULT);
-        CachedReversibleString cachedReversibleString =
-                new CachedReversibleString(mockLettersAnagram);
-
         cachedReversibleString.reverse();
         cachedReversibleString.reverse();
         cachedReversibleString.reverse();
@@ -31,11 +36,8 @@ class CachedReversibleStringTest {
 
     @Test
     void reverse_LettersAnagramReverseAndCachedReversibleStringReverseIsEquals_ReturnTrue() {
-        when(mockLettersAnagram.reverse()).thenReturn(RESULT);
         String expectedResult = mockLettersAnagram.reverse();
 
-        CachedReversibleString cachedReversibleString =
-                new CachedReversibleString(mockLettersAnagram);
         String result = cachedReversibleString.reverse();
 
         assertEquals(expectedResult, result);
