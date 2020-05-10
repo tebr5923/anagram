@@ -11,13 +11,14 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class CachedReversibleStringTest {
+    private static final String RESULT = "123";
 
     @Mock
     private LettersAnagram mockLettersAnagram;
 
     @Test
     void reverse_shouldCallReverseOneTime_whenCallReverseOneMoreTimes() {
-        when(mockLettersAnagram.reverse()).thenReturn("123");
+        when(mockLettersAnagram.reverse()).thenReturn(RESULT);
         CachedReversibleString cachedReversibleString =
                 new CachedReversibleString(mockLettersAnagram);
 
@@ -30,11 +31,11 @@ class CachedReversibleStringTest {
 
     @Test
     void reverse_LettersAnagramReverseAndCachedReversibleStringReverseIsEquals_ReturnTrue() {
-        LettersAnagram lettersAnagram = new LettersAnagram("abc458 h");
-        String expectedResult = lettersAnagram.reverse();
+        when(mockLettersAnagram.reverse()).thenReturn(RESULT);
+        String expectedResult = mockLettersAnagram.reverse();
 
         CachedReversibleString cachedReversibleString =
-                new CachedReversibleString(lettersAnagram);
+                new CachedReversibleString(mockLettersAnagram);
         String result = cachedReversibleString.reverse();
 
         assertEquals(expectedResult, result);
