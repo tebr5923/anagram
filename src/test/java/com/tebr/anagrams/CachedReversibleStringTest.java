@@ -17,12 +17,12 @@ class CachedReversibleStringTest {
     private CachedReversibleString cachedReversibleString;
 
     @Mock
-    private LettersAnagram mockLettersAnagram;
+    private ReversibleString mockReversibleString;
 
     @BeforeEach
     public void setUp() {
-        when(mockLettersAnagram.reverse()).thenReturn(RESULT);
-        cachedReversibleString = new CachedReversibleString(mockLettersAnagram);
+        when(mockReversibleString.reverse()).thenReturn(RESULT);
+        cachedReversibleString = new CachedReversibleString(mockReversibleString);
     }
 
     @Test
@@ -31,12 +31,12 @@ class CachedReversibleStringTest {
         cachedReversibleString.reverse();
         cachedReversibleString.reverse();
 
-        verify(mockLettersAnagram).reverse();
+        verify(mockReversibleString).reverse();
     }
 
     @Test
     void reverse_shouldNotAffectTheResultCachedReversibleString() {
-        String expectedResult = mockLettersAnagram.reverse();
+        String expectedResult = mockReversibleString.reverse();
 
         String result = cachedReversibleString.reverse();
 
