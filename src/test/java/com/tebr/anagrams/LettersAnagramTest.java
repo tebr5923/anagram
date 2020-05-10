@@ -30,7 +30,7 @@ class LettersAnagramTest {
             "qwerty, ytrewq",
             "123 321, 123 321"
     })
-    void reverse_shouldReturnReverseString_whenTextIsRandom(
+    void reverse_shouldReturnReversedString_whenTextIsRandom(
             String inputText,
             String expectedResult
     ) {
