@@ -12,7 +12,6 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class CachedReversibleStringTest {
-    private static final String RESULT = "123";
 
     private CachedReversibleString cachedReversibleString;
 
@@ -21,7 +20,8 @@ class CachedReversibleStringTest {
 
     @BeforeEach
     public void setUp() {
-        when(mockReversibleString.reverse()).thenReturn(RESULT);
+        final String result = "123";
+        when(mockReversibleString.reverse()).thenReturn(result);
         cachedReversibleString = new CachedReversibleString(mockReversibleString);
     }
 
