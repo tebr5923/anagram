@@ -35,7 +35,7 @@ class CachedReversibleStringTest {
     }
 
     @Test
-    void reverse_shouldNotAffectTheResultCachedReversibleString() {
+    void reverse_shouldNotAffectTheResult() {
         String expectedResult = mockReversibleString.reverse();
 
         String result = cachedReversibleString.reverse();
