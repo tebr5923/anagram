@@ -1,6 +1,6 @@
 package com.tebr.anagrams;
 
-import java.util.Stack;
+import java.util.LinkedList;
 import java.util.StringJoiner;
 
 public class LettersAnagram implements ReversibleString {
@@ -24,7 +24,7 @@ public class LettersAnagram implements ReversibleString {
     }
 
     private String reverseWord(String word) {
-        Stack<Character> letters = collectLetters(word);
+        LinkedList<Character>  letters = collectLetters(word);
         char[] chars = word.toCharArray();
         for (int i = 0; i < word.length(); i++) {
             if (Character.isLetter(chars[i])) {
@@ -34,8 +34,8 @@ public class LettersAnagram implements ReversibleString {
         return new String(chars);
     }
 
-    private Stack<Character> collectLetters(String word) {
-        Stack<Character> letters = new Stack<>();
+    private LinkedList<Character> collectLetters(String word) {
+        LinkedList<Character>  letters = new LinkedList<>();
         for (char ch : word.toCharArray()) {
             if (Character.isLetter(ch)) {
                 letters.push(ch);
