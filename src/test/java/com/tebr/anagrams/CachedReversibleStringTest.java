@@ -20,8 +20,7 @@ class CachedReversibleStringTest {
 
     @BeforeEach
     public void setUp() {
-        final String result = "123";
-        when(mockReversibleString.reverse()).thenReturn(result);
+        when(mockReversibleString.reverse()).thenReturn("123");
         cachedReversibleString = new CachedReversibleString(mockReversibleString);
     }
 
