@@ -8,14 +8,14 @@ public class LettersAnagram implements ReversibleString {
     private final String inputText;
 
     public LettersAnagram(String text) {
-        if (text == null) {
-            throw new IllegalArgumentException("Input must not be null");
-        }
         this.inputText = text;
     }
 
     @Override
     public String reverse() {
+        if (inputText == null) {
+            throw new IllegalStateException("null can't be reversed");
+        }
         StringJoiner stringJoiner = new StringJoiner(DELIMITER);
         for (String word : inputText.split(DELIMITER, -1)) {
             stringJoiner.add(reverseWord(word));

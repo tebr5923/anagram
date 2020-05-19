@@ -19,8 +19,10 @@ class LettersAnagramTest {
     }
 
     @Test
-    void reverse_shouldThrowIllegalArgumentException_whenArgumentIsNull() {
-        assertThrows(IllegalArgumentException.class,  () -> new LettersAnagram(null));
+    void reverse_shouldThrowIllegalStateException_whenArgumentIsNull() {
+        LettersAnagram anagram = new LettersAnagram(null);
+
+        assertThrows(IllegalStateException.class, anagram::reverse);
     }
 
     @ParameterizedTest
